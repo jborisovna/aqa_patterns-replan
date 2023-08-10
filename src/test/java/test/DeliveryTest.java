@@ -46,6 +46,7 @@ public class DeliveryTest {
                 .shouldHave(visible, Condition.text("Необходимо подтверждение"))
                 .shouldBe(visible);
         $("[data-test-id=replan-notification] button").click();
+        $("[data-test-id=success-notification]").shouldBe(visible, Duration.ofSeconds(25));
         $("[data-test-id=success-notification]").shouldHave(Condition.text("Успешно!\n" +
                 "Встреча успешно запланирована на " + secondMeeting)).shouldBe(Condition.visible);
     }
