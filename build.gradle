@@ -1,5 +1,14 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+allure {
+    autoconfigure = true
+    version = '2.23.0'
+    useJUnit5 {
+        version = '2.23.0'
+    }
 }
 
 group 'ru.netology'
@@ -17,16 +26,9 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
     testImplementation 'com.codeborne:selenide:6.13.0'
-    implementation 'com.github.javafaker:javafaker:1.0.2'
-
-    testImplementation 'io.rest-assured:rest-assured:4.3.0'
-    testImplementation 'com.google.code.gson:gson:2.8.6'
-
-    compileOnly 'org.projectlombok:lombok:1.18.28'
-    annotationProcessor 'org.projectlombok:lombok:1.18.28'
-
-    testCompileOnly 'org.projectlombok:lombok:1.18.28'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+    testImplementation 'com.github.javafaker:javafaker:1.0.1'
+    testImplementation 'com.github.javafaker:javafaker:1.0.1'
+    testImplementation 'io.qameta.allure:allure-selenide:2.13.3'
 }
 
 test {
