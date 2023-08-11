@@ -43,8 +43,8 @@ public class DeliveryTest {
         $("[data-test-id=date] input").doubleClick().sendKeys(secondMeeting);
         $(".button").click();
         $("[data-test-id=replan-notification]")
-                .shouldHave(visible, Condition.text("Необходимо подтверждение"))
-                .shouldBe(visible);
+                .shouldHave(Condition.text("У вас уже запланирована встреча на другую дату. Перепланировать?"))
+                .shouldBe(visible, Duration.ofSeconds(25));
         $("[data-test-id=replan-notification] button").click();
         $("[data-test-id=success-notification]").shouldBe(visible, Duration.ofSeconds(25));
         $("[data-test-id=success-notification]").shouldHave(Condition.text("Успешно!\n" +
